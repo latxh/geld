@@ -1,0 +1,133 @@
+header h1 {
+  background-color: red;
+}
+
+nav h1 {
+  background-color: blue;
+}
+
+aside h1 {
+  background-color: green;
+}
+
+main h1 {
+  background-color: yellow;
+}
+
+footer h1 {
+  background-color: orange;
+}
+
+.input {
+  width: 80%;
+  height: 50px;
+  border: solid 2px red;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  transition: all 0.2s cubic-bezier(0.215, 0.610, 0.355, 1);
+  padding: 0 10px;
+} 
+
+.input:hover,
+.input:active,
+.input:focus {
+  background-color: lightblue;
+  cursor: pointer;
+}
+
+
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+
+
+.container {
+    display: grid;
+  
+    grid-template-areas:
+      "header header header"
+      "nav content side"
+      "footer footer footer";
+  
+    grid-template-columns: 200px 1fr 200px;
+    grid-template-rows: auto 1fr auto;
+    grid-gap: 10px;
+  
+    height: 100vh;
+  }
+
+  header {
+    grid-area: header;
+  }
+  
+  nav {
+    grid-area: nav;
+    margin-left: 0.5rem;
+  }
+  
+  main {
+    grid-area: content;
+  }
+  
+  aside {
+    grid-area: side;
+    margin-right: 0.5rem;
+  }
+  
+  footer {
+    grid-area: footer;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {background-color: #f2f2f2;}
+
+  @media (max-width: 768px) {
+    .container {
+      grid-template-areas:
+        "header"
+        "nav"
+        "content"
+        "side"
+        "footer";
+  
+      grid-template-columns: 1fr;
+      grid-template-rows:
+        auto /* Header */
+        minmax(75px, auto) /* Nav */
+        1fr /* Content */
+        minmax(75px, auto) /* Sidebar */
+        auto; /* Footer */
+    }
+  
+    nav, aside {
+      margin: 0;
+    }
+  }
