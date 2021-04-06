@@ -8,7 +8,7 @@
 <MaterialApp theme={$darkTheme ? "dark" : "light"}>
     <AppBar>
         <div slot="icon">
-            <Button fab depressed>
+            <Button fab depressed> 
                 <Icon path={mdiMenu} />
             </Button>
         </div>
@@ -32,7 +32,7 @@
             $darkTheme = !$darkTheme;
         }}
     >
-        test
+        testt
     </Button>
 </MaterialApp>
 

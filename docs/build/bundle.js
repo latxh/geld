@@ -4151,7 +4151,7 @@ var app = (function () {
     			div = element("div");
     			create_component(button.$$.fragment);
     			attr_dev(div, "slot", "activator");
-    			add_location(div, file, 18, 12, 676);
+    			add_location(div, file, 18, 12, 691);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -4236,7 +4236,7 @@ var app = (function () {
     			t2 = space();
     			create_component(menu.$$.fragment);
     			set_style(div, "flex-grow", "1");
-    			add_location(div, file, 15, 8, 576);
+    			add_location(div, file, 15, 8, 588);
     		},
     		m: function mount(target, anchor) {
     			mount_component(logo, target, anchor);
@@ -4360,7 +4360,7 @@ var app = (function () {
     			div = element("div");
     			create_component(button.$$.fragment);
     			attr_dev(div, "slot", "icon");
-    			add_location(div, file, 8, 8, 325);
+    			add_location(div, file, 8, 8, 329);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -4402,13 +4402,13 @@ var app = (function () {
     	return block;
     }
 
-    // (29:4) <Button         on:click={() => {             $darkTheme = !$darkTheme;         }}     >
+    // (29:4) <Button          on:click={() => {              $darkTheme = !$darkTheme;          }}      >
     function create_default_slot_1(ctx) {
     	let t;
 
     	const block = {
     		c: function create() {
-    			t = text("test");
+    			t = text("testt");
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t, anchor);
@@ -4422,7 +4422,7 @@ var app = (function () {
     		block,
     		id: create_default_slot_1.name,
     		type: "slot",
-    		source: "(29:4) <Button         on:click={() => {             $darkTheme = !$darkTheme;         }}     >",
+    		source: "(29:4) <Button          on:click={() => {              $darkTheme = !$darkTheme;          }}      >",
     		ctx
     	});
 
