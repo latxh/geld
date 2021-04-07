@@ -27,9 +27,13 @@
   },
   "dependencies": {
     "@mdi/js": "^5.9.55",
+    "localforage": "^1.9.0",
+    "papaparse": "^5.3.0",
     "postcss": "^8.2.9",
     "sass": "^1.32.8",
     "sirv-cli": "^1.0.0",
-    "svelte-materialify": "^0.3.9"
+    "svelte-materialify": "^0.3.9",
+    "svelte-router-spa": "^6.0.2",
+    "svelte-spa-router": "^3.1.0"
   }
 }
