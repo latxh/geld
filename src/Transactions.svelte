@@ -26,33 +26,87 @@
       });
     }
   }
+  const toggleColumn = (col: string) => {
+    if (sortCol !== col) {
+      sortCol = col;
+      direction = -1;
+    } else if (direction === -1) {
+      direction = 1;
+    } else {
+      sortCol = "";
+    }
+  };
 </script>
 
 <h4>All Transactions</h4>
-<table>
+<table class="transtable">
   <tr>
-    <th
-      on:click={() => {
-        if (sortCol !== "date") {
-          sortCol = "date";
-          direction = -1;
-        } else if (direction === -1) {
-          direction = 1;
-        } else {
-          sortCol = "";
-        }
-      }}
-    >
+    <th on:click={() => toggleColumn("date")}>
       Date
-      {#if sortCol === "date"}
-        <Icon path={mdiArrowUp} />
-      {/if}
+      <Icon
+        path={mdiArrowUp}
+        class={`arrow ${
+          sortCol === "date" ? (direction === -1 ? "up" : "down") : "hidden"
+        }`}
+      />
     </th>
-    <th>Posted Date</th>
-    <th>Card Number</th>
-    <th>Description</th>
-    <th>Category</th>
-    <th>Amount</th>
+    <th on:click={() => toggleColumn("postedDate")}>
+      Posted Date
+      <Icon
+        path={mdiArrowUp}
+        class={`arrow ${
+          sortCol === "postedDate"
+            ? direction === -1
+              ? "up"
+              : "down"
+            : "hidden"
+        }`}
+      />
+    </th>
+    <th on:click={() => toggleColumn("cardNumber")}>
+      Card Number
+      <Icon
+        path={mdiArrowUp}
+        class={`arrow ${
+          sortCol === "cardNumber"
+            ? direction === -1
+              ? "up"
+              : "down"
+            : "hidden"
+        }`}
+      />
+    </th>
+    <th on:click={() => toggleColumn("description")}>
+      Description
+      <Icon
+        path={mdiArrowUp}
+        class={`arrow ${
+          sortCol === "description"
+            ? direction === -1
+              ? "up"
+              : "down"
+            : "hidden"
+        }`}
+      />
+    </th>
+    <th on:click={() => toggleColumn("category")}>
+      Category
+      <Icon
+        path={mdiArrowUp}
+        class={`arrow ${
+          sortCol === "category" ? (direction === -1 ? "up" : "down") : "hidden"
+        }`}
+      />
+    </th>
+    <th on:click={() => toggleColumn("amount")}>
+      Amount
+      <Icon
+        path={mdiArrowUp}
+        class={`arrow ${
+          sortCol === "amount" ? (direction === -1 ? "up" : "down") : "hidden"
+        }`}
+      />
+    </th>
   </tr>
 
   {#each sorted as transaction}
@@ -70,6 +124,26 @@
 </table>
 
 <style>
+  :global(i.arrow.hidden) {
+    opacity: 0;
+  }
+
+  :global(th:hover i.arrow.hidden) {
+    opacity: 0.5;
+  }
+
+  :global(i.arrow.down) {
+    transform: rotateX(180deg);
+  }
+
+  :global(i.arrow) {
+    width: 17px;
+  }
+
+  .transtable tr:first-child th {
+    cursor: pointer;
+  }
+
   table,
   td,
   th {

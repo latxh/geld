@@ -1276,7 +1276,7 @@ var app = (function () {
     const file$g = "node_modules\\svelte-materialify\\dist\\components\\Icon\\Icon.svelte";
 
     // (73:2) {#if path}
-    function create_if_block$7(ctx) {
+    function create_if_block$6(ctx) {
     	let svg;
     	let path_1;
     	let svg_viewBox_value;
@@ -1338,7 +1338,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$7.name,
+    		id: create_if_block$6.name,
     		type: "if",
     		source: "(73:2) {#if path}",
     		ctx
@@ -1389,7 +1389,7 @@ var app = (function () {
     	let current;
     	let mounted;
     	let dispose;
-    	let if_block = /*path*/ ctx[9] && create_if_block$7(ctx);
+    	let if_block = /*path*/ ctx[9] && create_if_block$6(ctx);
     	const default_slot_template = /*#slots*/ ctx[13].default;
     	const default_slot = create_slot(default_slot_template, ctx, /*$$scope*/ ctx[12], null);
 
@@ -1436,7 +1436,7 @@ var app = (function () {
     				if (if_block) {
     					if_block.p(ctx, dirty);
     				} else {
-    					if_block = create_if_block$7(ctx);
+    					if_block = create_if_block$6(ctx);
     					if_block.c();
     					if_block.m(i, t);
     				}
@@ -2666,7 +2666,7 @@ var app = (function () {
     const get_activator_slot_context = ctx => ({});
 
     // (145:2) {#if active}
-    function create_if_block$6(ctx) {
+    function create_if_block$5(ctx) {
     	let div;
     	let div_class_value;
     	let div_style_value;
@@ -2752,7 +2752,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$6.name,
+    		id: create_if_block$5.name,
     		type: "if",
     		source: "(145:2) {#if active}",
     		ctx
@@ -2769,7 +2769,7 @@ var app = (function () {
     	let dispose;
     	const activator_slot_template = /*#slots*/ ctx[26].activator;
     	const activator_slot = create_slot(activator_slot_template, ctx, /*$$scope*/ ctx[25], get_activator_slot_context);
-    	let if_block = /*active*/ ctx[0] && create_if_block$6(ctx);
+    	let if_block = /*active*/ ctx[0] && create_if_block$5(ctx);
 
     	const block = {
     		c: function create() {
@@ -2819,7 +2819,7 @@ var app = (function () {
     						transition_in(if_block, 1);
     					}
     				} else {
-    					if_block = create_if_block$6(ctx);
+    					if_block = create_if_block$5(ctx);
     					if_block.c();
     					transition_in(if_block, 1);
     					if_block.m(div, null);
@@ -4799,7 +4799,7 @@ var app = (function () {
     }
 
     // (167:2) {#if active}
-    function create_if_block$5(ctx) {
+    function create_if_block$4(ctx) {
     	let div;
     	let div_transition;
     	let current;
@@ -4872,7 +4872,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$5.name,
+    		id: create_if_block$4.name,
     		type: "if",
     		source: "(167:2) {#if active}",
     		ctx
@@ -4897,7 +4897,7 @@ var app = (function () {
     	const icon_slot_template = /*#slots*/ ctx[12].icon;
     	const icon_slot = create_slot(icon_slot_template, ctx, /*$$scope*/ ctx[11], get_icon_slot_context$1);
     	const icon_slot_or_fallback = icon_slot || fallback_block(ctx);
-    	let if_block = /*active*/ ctx[5] && create_if_block$5(ctx);
+    	let if_block = /*active*/ ctx[5] && create_if_block$4(ctx);
 
     	const block = {
     		c: function create() {
@@ -4979,7 +4979,7 @@ var app = (function () {
     						transition_in(if_block, 1);
     					}
     				} else {
-    					if_block = create_if_block$5(ctx);
+    					if_block = create_if_block$4(ctx);
     					if_block.c();
     					transition_in(if_block, 1);
     					if_block.m(div1, null);
@@ -5247,7 +5247,7 @@ var app = (function () {
     const get_icon_slot_context = ctx => ({});
 
     // (107:4) {#if !collapsed}
-    function create_if_block$4(ctx) {
+    function create_if_block$3(ctx) {
     	let div;
     	let current;
     	const title_slot_template = /*#slots*/ ctx[11].title;
@@ -5293,7 +5293,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$4.name,
+    		id: create_if_block$3.name,
     		type: "if",
     		source: "(107:4) {#if !collapsed}",
     		ctx
@@ -5315,7 +5315,7 @@ var app = (function () {
     	let dispose;
     	const icon_slot_template = /*#slots*/ ctx[11].icon;
     	const icon_slot = create_slot(icon_slot_template, ctx, /*$$scope*/ ctx[10], get_icon_slot_context);
-    	let if_block = !/*collapsed*/ ctx[8] && create_if_block$4(ctx);
+    	let if_block = !/*collapsed*/ ctx[8] && create_if_block$3(ctx);
     	const default_slot_template = /*#slots*/ ctx[11].default;
     	const default_slot = create_slot(default_slot_template, ctx, /*$$scope*/ ctx[10], null);
     	const extension_slot_template = /*#slots*/ ctx[11].extension;
@@ -5392,7 +5392,7 @@ var app = (function () {
     						transition_in(if_block, 1);
     					}
     				} else {
-    					if_block = create_if_block$4(ctx);
+    					if_block = create_if_block$3(ctx);
     					if_block.c();
     					transition_in(if_block, 1);
     					if_block.m(div, t1);
@@ -5696,7 +5696,7 @@ var app = (function () {
     const file$7 = "node_modules\\svelte-materialify\\dist\\components\\Snackbar\\Snackbar.svelte";
 
     // (136:2) {#if active}
-    function create_if_block$3(ctx) {
+    function create_if_block$2(ctx) {
     	let div;
     	let div_class_value;
     	let div_transition;
@@ -5797,7 +5797,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$3.name,
+    		id: create_if_block$2.name,
     		type: "if",
     		source: "(136:2) {#if active}",
     		ctx
@@ -5812,7 +5812,7 @@ var app = (function () {
     	let current;
     	let mounted;
     	let dispose;
-    	let if_block = /*active*/ ctx[0] && create_if_block$3(ctx);
+    	let if_block = /*active*/ ctx[0] && create_if_block$2(ctx);
 
     	const block = {
     		c: function create() {
@@ -5853,7 +5853,7 @@ var app = (function () {
     						transition_in(if_block, 1);
     					}
     				} else {
-    					if_block = create_if_block$3(ctx);
+    					if_block = create_if_block$2(ctx);
     					if_block.c();
     					transition_in(if_block, 1);
     					if_block.m(div, null);
@@ -6272,7 +6272,7 @@ var app = (function () {
     const get_prepend_slot_context = ctx => ({});
 
     // (131:2) {#if !borderless}
-    function create_if_block$2(ctx) {
+    function create_if_block$1(ctx) {
     	let div;
 
     	const block = {
@@ -6291,7 +6291,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$2.name,
+    		id: create_if_block$1.name,
     		type: "if",
     		source: "(131:2) {#if !borderless}",
     		ctx
@@ -6319,7 +6319,7 @@ var app = (function () {
     	const default_slot = create_slot(default_slot_template, ctx, /*$$scope*/ ctx[15], null);
     	const append_slot_template = /*#slots*/ ctx[16].append;
     	const append_slot = create_slot(append_slot_template, ctx, /*$$scope*/ ctx[15], get_append_slot_context);
-    	let if_block = !/*borderless*/ ctx[8] && create_if_block$2(ctx);
+    	let if_block = !/*borderless*/ ctx[8] && create_if_block$1(ctx);
 
     	const block = {
     		c: function create() {
@@ -6411,7 +6411,7 @@ var app = (function () {
 
     			if (!/*borderless*/ ctx[8]) {
     				if (if_block) ; else {
-    					if_block = create_if_block$2(ctx);
+    					if_block = create_if_block$1(ctx);
     					if_block.c();
     					if_block.m(aside, null);
     				}
@@ -10084,7 +10084,7 @@ var app = (function () {
     }
 
     // (202:0) {#if componentParams}
-    function create_if_block$1(ctx) {
+    function create_if_block(ctx) {
     	let switch_instance;
     	let switch_instance_anchor;
     	let current;
@@ -10172,7 +10172,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$1.name,
+    		id: create_if_block.name,
     		type: "if",
     		source: "(202:0) {#if componentParams}",
     		ctx
@@ -10186,7 +10186,7 @@ var app = (function () {
     	let if_block;
     	let if_block_anchor;
     	let current;
-    	const if_block_creators = [create_if_block$1, create_else_block];
+    	const if_block_creators = [create_if_block, create_else_block];
     	const if_blocks = [];
 
     	function select_block_type(ctx, dirty) {
@@ -12297,79 +12297,35 @@ var app = (function () {
 
     function get_each_context(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[5] = list[i];
+    	child_ctx[11] = list[i];
     	return child_ctx;
     }
 
-    // (41:6) {#if sortCol === "date"}
-    function create_if_block(ctx) {
-    	let icon;
-    	let current;
-
-    	icon = new Icon({
-    			props: { path: mdiArrowUp },
-    			$$inline: true
-    		});
-
-    	const block = {
-    		c: function create() {
-    			create_component(icon.$$.fragment);
-    		},
-    		m: function mount(target, anchor) {
-    			mount_component(icon, target, anchor);
-    			current = true;
-    		},
-    		p: noop,
-    		i: function intro(local) {
-    			if (current) return;
-    			transition_in(icon.$$.fragment, local);
-    			current = true;
-    		},
-    		o: function outro(local) {
-    			transition_out(icon.$$.fragment, local);
-    			current = false;
-    		},
-    		d: function destroy(detaching) {
-    			destroy_component(icon, detaching);
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_if_block.name,
-    		type: "if",
-    		source: "(41:6) {#if sortCol === \\\"date\\\"}",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    // (52:2) {#each sorted as transaction}
+    // (108:2) {#each sorted as transaction}
     function create_each_block(ctx) {
     	let tr;
     	let td0;
-    	let t0_value = /*transaction*/ ctx[5].date.toDateString().slice(4) + "";
+    	let t0_value = /*transaction*/ ctx[11].date.toDateString().slice(4) + "";
     	let t0;
     	let t1;
     	let td1;
-    	let t2_value = /*transaction*/ ctx[5].postedDate.toDateString().slice(4) + "";
+    	let t2_value = /*transaction*/ ctx[11].postedDate.toDateString().slice(4) + "";
     	let t2;
     	let t3;
     	let td2;
-    	let t4_value = /*transaction*/ ctx[5].cardNumber + "";
+    	let t4_value = /*transaction*/ ctx[11].cardNumber + "";
     	let t4;
     	let t5;
     	let td3;
-    	let t6_value = /*transaction*/ ctx[5].description + "";
+    	let t6_value = /*transaction*/ ctx[11].description + "";
     	let t6;
     	let t7;
     	let td4;
-    	let t8_value = /*transaction*/ ctx[5].category + "";
+    	let t8_value = /*transaction*/ ctx[11].category + "";
     	let t8;
     	let t9;
     	let td5;
-    	let t10_value = /*transaction*/ ctx[5].amount + "";
+    	let t10_value = /*transaction*/ ctx[11].amount + "";
     	let t10;
     	let td5_class_value;
     	let t11;
@@ -12396,28 +12352,28 @@ var app = (function () {
     			td5 = element("td");
     			t10 = text(t10_value);
     			t11 = space();
-    			attr_dev(td0, "class", "svelte-avgam4");
-    			add_location(td0, file$1, 53, 6, 1329);
-    			attr_dev(td1, "class", "svelte-avgam4");
-    			add_location(td1, file$1, 54, 6, 1388);
-    			attr_dev(td2, "class", "svelte-avgam4");
-    			add_location(td2, file$1, 55, 6, 1453);
-    			attr_dev(td3, "class", "svelte-avgam4");
-    			add_location(td3, file$1, 56, 6, 1494);
-    			attr_dev(td4, "class", "svelte-avgam4");
-    			add_location(td4, file$1, 57, 6, 1536);
+    			attr_dev(td0, "class", "svelte-12cvc8j");
+    			add_location(td0, file$1, 109, 6, 2755);
+    			attr_dev(td1, "class", "svelte-12cvc8j");
+    			add_location(td1, file$1, 110, 6, 2814);
+    			attr_dev(td2, "class", "svelte-12cvc8j");
+    			add_location(td2, file$1, 111, 6, 2879);
+    			attr_dev(td3, "class", "svelte-12cvc8j");
+    			add_location(td3, file$1, 112, 6, 2920);
+    			attr_dev(td4, "class", "svelte-12cvc8j");
+    			add_location(td4, file$1, 113, 6, 2962);
 
-    			attr_dev(td5, "class", td5_class_value = "" + (null_to_empty(/*transaction*/ ctx[5].amount >= 0
+    			attr_dev(td5, "class", td5_class_value = "" + (null_to_empty(/*transaction*/ ctx[11].amount >= 0
     			? "positive"
-    			: "negative") + " svelte-avgam4"));
+    			: "negative") + " svelte-12cvc8j"));
 
-    			add_location(td5, file$1, 58, 6, 1575);
+    			add_location(td5, file$1, 114, 6, 3001);
 
-    			attr_dev(tr, "class", tr_class_value = "" + (null_to_empty(/*transaction*/ ctx[5].amount >= 0
+    			attr_dev(tr, "class", tr_class_value = "" + (null_to_empty(/*transaction*/ ctx[11].amount >= 0
     			? "positive"
-    			: "negative") + " svelte-avgam4"));
+    			: "negative") + " svelte-12cvc8j"));
 
-    			add_location(tr, file$1, 52, 4, 1259);
+    			add_location(tr, file$1, 108, 4, 2685);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
@@ -12441,22 +12397,22 @@ var app = (function () {
     			append_dev(tr, t11);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*sorted*/ 4 && t0_value !== (t0_value = /*transaction*/ ctx[5].date.toDateString().slice(4) + "")) set_data_dev(t0, t0_value);
-    			if (dirty & /*sorted*/ 4 && t2_value !== (t2_value = /*transaction*/ ctx[5].postedDate.toDateString().slice(4) + "")) set_data_dev(t2, t2_value);
-    			if (dirty & /*sorted*/ 4 && t4_value !== (t4_value = /*transaction*/ ctx[5].cardNumber + "")) set_data_dev(t4, t4_value);
-    			if (dirty & /*sorted*/ 4 && t6_value !== (t6_value = /*transaction*/ ctx[5].description + "")) set_data_dev(t6, t6_value);
-    			if (dirty & /*sorted*/ 4 && t8_value !== (t8_value = /*transaction*/ ctx[5].category + "")) set_data_dev(t8, t8_value);
-    			if (dirty & /*sorted*/ 4 && t10_value !== (t10_value = /*transaction*/ ctx[5].amount + "")) set_data_dev(t10, t10_value);
+    			if (dirty & /*sorted*/ 4 && t0_value !== (t0_value = /*transaction*/ ctx[11].date.toDateString().slice(4) + "")) set_data_dev(t0, t0_value);
+    			if (dirty & /*sorted*/ 4 && t2_value !== (t2_value = /*transaction*/ ctx[11].postedDate.toDateString().slice(4) + "")) set_data_dev(t2, t2_value);
+    			if (dirty & /*sorted*/ 4 && t4_value !== (t4_value = /*transaction*/ ctx[11].cardNumber + "")) set_data_dev(t4, t4_value);
+    			if (dirty & /*sorted*/ 4 && t6_value !== (t6_value = /*transaction*/ ctx[11].description + "")) set_data_dev(t6, t6_value);
+    			if (dirty & /*sorted*/ 4 && t8_value !== (t8_value = /*transaction*/ ctx[11].category + "")) set_data_dev(t8, t8_value);
+    			if (dirty & /*sorted*/ 4 && t10_value !== (t10_value = /*transaction*/ ctx[11].amount + "")) set_data_dev(t10, t10_value);
 
-    			if (dirty & /*sorted*/ 4 && td5_class_value !== (td5_class_value = "" + (null_to_empty(/*transaction*/ ctx[5].amount >= 0
+    			if (dirty & /*sorted*/ 4 && td5_class_value !== (td5_class_value = "" + (null_to_empty(/*transaction*/ ctx[11].amount >= 0
     			? "positive"
-    			: "negative") + " svelte-avgam4"))) {
+    			: "negative") + " svelte-12cvc8j"))) {
     				attr_dev(td5, "class", td5_class_value);
     			}
 
-    			if (dirty & /*sorted*/ 4 && tr_class_value !== (tr_class_value = "" + (null_to_empty(/*transaction*/ ctx[5].amount >= 0
+    			if (dirty & /*sorted*/ 4 && tr_class_value !== (tr_class_value = "" + (null_to_empty(/*transaction*/ ctx[11].amount >= 0
     			? "positive"
-    			: "negative") + " svelte-avgam4"))) {
+    			: "negative") + " svelte-12cvc8j"))) {
     				attr_dev(tr, "class", tr_class_value);
     			}
     		},
@@ -12469,7 +12425,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(52:2) {#each sorted as transaction}",
+    		source: "(108:2) {#each sorted as transaction}",
     		ctx
     	});
 
@@ -12483,21 +12439,92 @@ var app = (function () {
     	let tr;
     	let th0;
     	let t2;
+    	let icon0;
     	let t3;
     	let th1;
+    	let t4;
+    	let icon1;
     	let t5;
     	let th2;
+    	let t6;
+    	let icon2;
     	let t7;
     	let th3;
+    	let t8;
+    	let icon3;
     	let t9;
     	let th4;
+    	let t10;
+    	let icon4;
     	let t11;
     	let th5;
+    	let t12;
+    	let icon5;
     	let t13;
     	let current;
     	let mounted;
     	let dispose;
-    	let if_block = /*sortCol*/ ctx[0] === "date" && create_if_block(ctx);
+
+    	icon0 = new Icon({
+    			props: {
+    				path: mdiArrowUp,
+    				class: `arrow ${/*sortCol*/ ctx[0] === "date"
+				? /*direction*/ ctx[1] === -1 ? "up" : "down"
+				: "hidden"}`
+    			},
+    			$$inline: true
+    		});
+
+    	icon1 = new Icon({
+    			props: {
+    				path: mdiArrowUp,
+    				class: `arrow ${/*sortCol*/ ctx[0] === "postedDate"
+				? /*direction*/ ctx[1] === -1 ? "up" : "down"
+				: "hidden"}`
+    			},
+    			$$inline: true
+    		});
+
+    	icon2 = new Icon({
+    			props: {
+    				path: mdiArrowUp,
+    				class: `arrow ${/*sortCol*/ ctx[0] === "cardNumber"
+				? /*direction*/ ctx[1] === -1 ? "up" : "down"
+				: "hidden"}`
+    			},
+    			$$inline: true
+    		});
+
+    	icon3 = new Icon({
+    			props: {
+    				path: mdiArrowUp,
+    				class: `arrow ${/*sortCol*/ ctx[0] === "description"
+				? /*direction*/ ctx[1] === -1 ? "up" : "down"
+				: "hidden"}`
+    			},
+    			$$inline: true
+    		});
+
+    	icon4 = new Icon({
+    			props: {
+    				path: mdiArrowUp,
+    				class: `arrow ${/*sortCol*/ ctx[0] === "category"
+				? /*direction*/ ctx[1] === -1 ? "up" : "down"
+				: "hidden"}`
+    			},
+    			$$inline: true
+    		});
+
+    	icon5 = new Icon({
+    			props: {
+    				path: mdiArrowUp,
+    				class: `arrow ${/*sortCol*/ ctx[0] === "amount"
+				? /*direction*/ ctx[1] === -1 ? "up" : "down"
+				: "hidden"}`
+    			},
+    			$$inline: true
+    		});
+
     	let each_value = /*sorted*/ ctx[2];
     	validate_each_argument(each_value);
     	let each_blocks = [];
@@ -12515,44 +12542,49 @@ var app = (function () {
     			tr = element("tr");
     			th0 = element("th");
     			t2 = text("Date\r\n      ");
-    			if (if_block) if_block.c();
+    			create_component(icon0.$$.fragment);
     			t3 = space();
     			th1 = element("th");
-    			th1.textContent = "Posted Date";
+    			t4 = text("Posted Date\r\n      ");
+    			create_component(icon1.$$.fragment);
     			t5 = space();
     			th2 = element("th");
-    			th2.textContent = "Card Number";
+    			t6 = text("Card Number\r\n      ");
+    			create_component(icon2.$$.fragment);
     			t7 = space();
     			th3 = element("th");
-    			th3.textContent = "Description";
+    			t8 = text("Description\r\n      ");
+    			create_component(icon3.$$.fragment);
     			t9 = space();
     			th4 = element("th");
-    			th4.textContent = "Category";
+    			t10 = text("Category\r\n      ");
+    			create_component(icon4.$$.fragment);
     			t11 = space();
     			th5 = element("th");
-    			th5.textContent = "Amount";
+    			t12 = text("Amount\r\n      ");
+    			create_component(icon5.$$.fragment);
     			t13 = space();
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].c();
     			}
 
-    			add_location(h4, file$1, 24, 0, 679);
-    			attr_dev(th0, "class", "svelte-avgam4");
-    			add_location(th0, file$1, 27, 4, 727);
-    			attr_dev(th1, "class", "svelte-avgam4");
-    			add_location(th1, file$1, 44, 4, 1093);
-    			attr_dev(th2, "class", "svelte-avgam4");
-    			add_location(th2, file$1, 45, 4, 1119);
-    			attr_dev(th3, "class", "svelte-avgam4");
-    			add_location(th3, file$1, 46, 4, 1145);
-    			attr_dev(th4, "class", "svelte-avgam4");
-    			add_location(th4, file$1, 47, 4, 1171);
-    			attr_dev(th5, "class", "svelte-avgam4");
-    			add_location(th5, file$1, 48, 4, 1194);
-    			add_location(tr, file$1, 26, 2, 717);
-    			attr_dev(table, "class", "svelte-avgam4");
-    			add_location(table, file$1, 25, 0, 706);
+    			add_location(h4, file$1, 36, 0, 907);
+    			attr_dev(th0, "class", "svelte-12cvc8j");
+    			add_location(th0, file$1, 39, 4, 974);
+    			attr_dev(th1, "class", "svelte-12cvc8j");
+    			add_location(th1, file$1, 48, 4, 1212);
+    			attr_dev(th2, "class", "svelte-12cvc8j");
+    			add_location(th2, file$1, 61, 4, 1523);
+    			attr_dev(th3, "class", "svelte-12cvc8j");
+    			add_location(th3, file$1, 74, 4, 1834);
+    			attr_dev(th4, "class", "svelte-12cvc8j");
+    			add_location(th4, file$1, 87, 4, 2147);
+    			attr_dev(th5, "class", "svelte-12cvc8j");
+    			add_location(th5, file$1, 96, 4, 2397);
+    			add_location(tr, file$1, 38, 2, 964);
+    			attr_dev(table, "class", "transtable svelte-12cvc8j");
+    			add_location(table, file$1, 37, 0, 934);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -12564,17 +12596,27 @@ var app = (function () {
     			append_dev(table, tr);
     			append_dev(tr, th0);
     			append_dev(th0, t2);
-    			if (if_block) if_block.m(th0, null);
+    			mount_component(icon0, th0, null);
     			append_dev(tr, t3);
     			append_dev(tr, th1);
+    			append_dev(th1, t4);
+    			mount_component(icon1, th1, null);
     			append_dev(tr, t5);
     			append_dev(tr, th2);
+    			append_dev(th2, t6);
+    			mount_component(icon2, th2, null);
     			append_dev(tr, t7);
     			append_dev(tr, th3);
+    			append_dev(th3, t8);
+    			mount_component(icon3, th3, null);
     			append_dev(tr, t9);
     			append_dev(tr, th4);
+    			append_dev(th4, t10);
+    			mount_component(icon4, th4, null);
     			append_dev(tr, t11);
     			append_dev(tr, th5);
+    			append_dev(th5, t12);
+    			mount_component(icon5, th5, null);
     			append_dev(table, t13);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
@@ -12584,33 +12626,61 @@ var app = (function () {
     			current = true;
 
     			if (!mounted) {
-    				dispose = listen_dev(th0, "click", /*click_handler*/ ctx[4], false, false, false);
+    				dispose = [
+    					listen_dev(th0, "click", /*click_handler*/ ctx[5], false, false, false),
+    					listen_dev(th1, "click", /*click_handler_1*/ ctx[6], false, false, false),
+    					listen_dev(th2, "click", /*click_handler_2*/ ctx[7], false, false, false),
+    					listen_dev(th3, "click", /*click_handler_3*/ ctx[8], false, false, false),
+    					listen_dev(th4, "click", /*click_handler_4*/ ctx[9], false, false, false),
+    					listen_dev(th5, "click", /*click_handler_5*/ ctx[10], false, false, false)
+    				];
+
     				mounted = true;
     			}
     		},
     		p: function update(ctx, [dirty]) {
-    			if (/*sortCol*/ ctx[0] === "date") {
-    				if (if_block) {
-    					if_block.p(ctx, dirty);
+    			const icon0_changes = {};
 
-    					if (dirty & /*sortCol*/ 1) {
-    						transition_in(if_block, 1);
-    					}
-    				} else {
-    					if_block = create_if_block(ctx);
-    					if_block.c();
-    					transition_in(if_block, 1);
-    					if_block.m(th0, null);
-    				}
-    			} else if (if_block) {
-    				group_outros();
+    			if (dirty & /*sortCol, direction*/ 3) icon0_changes.class = `arrow ${/*sortCol*/ ctx[0] === "date"
+			? /*direction*/ ctx[1] === -1 ? "up" : "down"
+			: "hidden"}`;
 
-    				transition_out(if_block, 1, 1, () => {
-    					if_block = null;
-    				});
+    			icon0.$set(icon0_changes);
+    			const icon1_changes = {};
 
-    				check_outros();
-    			}
+    			if (dirty & /*sortCol, direction*/ 3) icon1_changes.class = `arrow ${/*sortCol*/ ctx[0] === "postedDate"
+			? /*direction*/ ctx[1] === -1 ? "up" : "down"
+			: "hidden"}`;
+
+    			icon1.$set(icon1_changes);
+    			const icon2_changes = {};
+
+    			if (dirty & /*sortCol, direction*/ 3) icon2_changes.class = `arrow ${/*sortCol*/ ctx[0] === "cardNumber"
+			? /*direction*/ ctx[1] === -1 ? "up" : "down"
+			: "hidden"}`;
+
+    			icon2.$set(icon2_changes);
+    			const icon3_changes = {};
+
+    			if (dirty & /*sortCol, direction*/ 3) icon3_changes.class = `arrow ${/*sortCol*/ ctx[0] === "description"
+			? /*direction*/ ctx[1] === -1 ? "up" : "down"
+			: "hidden"}`;
+
+    			icon3.$set(icon3_changes);
+    			const icon4_changes = {};
+
+    			if (dirty & /*sortCol, direction*/ 3) icon4_changes.class = `arrow ${/*sortCol*/ ctx[0] === "category"
+			? /*direction*/ ctx[1] === -1 ? "up" : "down"
+			: "hidden"}`;
+
+    			icon4.$set(icon4_changes);
+    			const icon5_changes = {};
+
+    			if (dirty & /*sortCol, direction*/ 3) icon5_changes.class = `arrow ${/*sortCol*/ ctx[0] === "amount"
+			? /*direction*/ ctx[1] === -1 ? "up" : "down"
+			: "hidden"}`;
+
+    			icon5.$set(icon5_changes);
 
     			if (dirty & /*sorted*/ 4) {
     				each_value = /*sorted*/ ctx[2];
@@ -12638,21 +12708,36 @@ var app = (function () {
     		},
     		i: function intro(local) {
     			if (current) return;
-    			transition_in(if_block);
+    			transition_in(icon0.$$.fragment, local);
+    			transition_in(icon1.$$.fragment, local);
+    			transition_in(icon2.$$.fragment, local);
+    			transition_in(icon3.$$.fragment, local);
+    			transition_in(icon4.$$.fragment, local);
+    			transition_in(icon5.$$.fragment, local);
     			current = true;
     		},
     		o: function outro(local) {
-    			transition_out(if_block);
+    			transition_out(icon0.$$.fragment, local);
+    			transition_out(icon1.$$.fragment, local);
+    			transition_out(icon2.$$.fragment, local);
+    			transition_out(icon3.$$.fragment, local);
+    			transition_out(icon4.$$.fragment, local);
+    			transition_out(icon5.$$.fragment, local);
     			current = false;
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(h4);
     			if (detaching) detach_dev(t1);
     			if (detaching) detach_dev(table);
-    			if (if_block) if_block.d();
+    			destroy_component(icon0);
+    			destroy_component(icon1);
+    			destroy_component(icon2);
+    			destroy_component(icon3);
+    			destroy_component(icon4);
+    			destroy_component(icon5);
     			destroy_each(each_blocks, detaching);
     			mounted = false;
-    			dispose();
+    			run_all(dispose);
     		}
     	};
 
@@ -12670,21 +12755,16 @@ var app = (function () {
     function instance$1($$self, $$props, $$invalidate) {
     	let $transactions;
     	validate_store(transactions, "transactions");
-    	component_subscribe($$self, transactions, $$value => $$invalidate(3, $transactions = $$value));
+    	component_subscribe($$self, transactions, $$value => $$invalidate(4, $transactions = $$value));
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("Transactions", slots, []);
     	let sortCol = "";
     	let direction = -1;
     	let sorted = [];
-    	const writable_props = [];
 
-    	Object.keys($$props).forEach(key => {
-    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<Transactions> was created with unknown prop '${key}'`);
-    	});
-
-    	const click_handler = () => {
-    		if (sortCol !== "date") {
-    			$$invalidate(0, sortCol = "date");
+    	const toggleColumn = col => {
+    		if (sortCol !== col) {
+    			$$invalidate(0, sortCol = col);
     			$$invalidate(1, direction = -1);
     		} else if (direction === -1) {
     			$$invalidate(1, direction = 1);
@@ -12692,6 +12772,19 @@ var app = (function () {
     			$$invalidate(0, sortCol = "");
     		}
     	};
+
+    	const writable_props = [];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<Transactions> was created with unknown prop '${key}'`);
+    	});
+
+    	const click_handler = () => toggleColumn("date");
+    	const click_handler_1 = () => toggleColumn("postedDate");
+    	const click_handler_2 = () => toggleColumn("cardNumber");
+    	const click_handler_3 = () => toggleColumn("description");
+    	const click_handler_4 = () => toggleColumn("category");
+    	const click_handler_5 = () => toggleColumn("amount");
 
     	$$self.$capture_state = () => ({
     		Button,
@@ -12705,6 +12798,7 @@ var app = (function () {
     		sortCol,
     		direction,
     		sorted,
+    		toggleColumn,
     		$transactions
     	});
 
@@ -12719,7 +12813,7 @@ var app = (function () {
     	}
 
     	$$self.$$.update = () => {
-    		if ($$self.$$.dirty & /*sortCol, $transactions, sorted, direction*/ 15) {
+    		if ($$self.$$.dirty & /*sortCol, $transactions, sorted, direction*/ 23) {
     			{
     				if (sortCol === "") {
     					$$invalidate(2, sorted = $transactions);
@@ -12736,7 +12830,19 @@ var app = (function () {
     		}
     	};
 
-    	return [sortCol, direction, sorted, $transactions, click_handler];
+    	return [
+    		sortCol,
+    		direction,
+    		sorted,
+    		toggleColumn,
+    		$transactions,
+    		click_handler,
+    		click_handler_1,
+    		click_handler_2,
+    		click_handler_3,
+    		click_handler_4,
+    		click_handler_5
+    	];
     }
 
     class Transactions extends SvelteComponentDev {
