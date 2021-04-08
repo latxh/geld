@@ -25,7 +25,7 @@ export const transactions = largeSavedStore<Transaction[]>("transactions", [],(d
                 date: new Date(row.date),
                 postedDate: new Date(row.postedDate),
                 cardNumber: row.cardNumber,
-                description: row.description,
+                merchant: row.merchant,
                 category: row.category,
                 amount: row.amount,
               });

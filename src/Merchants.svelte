@@ -6,37 +6,38 @@
     MaterialApp,
   } from "svelte-materialify";
 
-  import { darkTheme } from "./stores";
+  import { transactions } from "./stores";
+  import TransactionsTable from "./TransactionsTable.svelte";
+
+  let merchants = [];
+
+  $: {
+    let merchantsSet = new Set<string>();
+    for (const transaction of $transactions) {
+      merchantsSet.add(transaction.merchant);
+    }
+    merchants = Array.from(merchantsSet);
+  }
 </script>
 
 <div class="container">
-  <h3>Merchants</h3>
+  <h4>Merchants ({merchants.length})</h4>
   <ExpansionPanels>
-    <ExpansionPanel>
-      <span slot="header">Item</span>
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat amet natus
-      obcaecati molestiae quas mollitia error modi atque aliquam esse.
-    </ExpansionPanel>
-    <ExpansionPanel>
-      <span slot="header">Item</span>
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat amet natus
-      obcaecati molestiae quas mollitia error modi atque aliquam esse.
-    </ExpansionPanel>
-    <ExpansionPanel disabled>
-      <span slot="header">Disabled</span>
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat amet natus
-      obcaecati molestiae quas mollitia error modi atque aliquam esse.
-    </ExpansionPanel>
-    <ExpansionPanel>
-      <span slot="header">Item</span>
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat amet natus
-      obcaecati molestiae quas mollitia error modi atque aliquam esse.
-    </ExpansionPanel>
+    {#each Array.from(merchants) as merchant}
+      <ExpansionPanel>
+        <span slot="header">{merchant}</span>
+        <TransactionsTable
+          transactions={$transactions.filter(
+            (item) => item.merchant === merchant
+          )}
+        />
+      </ExpansionPanel>
+    {/each}
   </ExpansionPanels>
 </div>
 
 <style>
-  h3 {
+  h4 {
     margin-bottom: 15px;
   }
 </style>

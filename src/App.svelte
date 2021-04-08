@@ -73,7 +73,7 @@
             date: new Date(row[0]),
             postedDate: new Date(row[1]),
             cardNumber: row[2],
-            description: row[3],
+            merchant: row[3],
             category: row[4],
             amount: (row[5] ? +row[5] : 0) - (row[6] ? +row[6] : 0),
           });
@@ -109,11 +109,12 @@
   <input
     bind:this={uploadElm}
     on:change={(evt) => {
-      if (uploadElm.files.length > 0) {
-        uploadFile(uploadElm.files[0]);
-        uploadElm.value = null;
+      for (const file of uploadElm.files) {
+        uploadFile(file);
       }
+      uploadElm.value = null;
     }}
+    multiple
     type="file"
     accept=".csv"
     style="display:none"
@@ -159,6 +160,12 @@
               </span>
               Merchants
             </ListItem>
+            <ListItem value="/categories" on:click={() => push("/categories")}>
+              <span slot="prepend">
+                <Icon path={mdiFolder} />
+              </span>
+              Categories
+            </ListItem>
             <ListItem
               value="/transactions"
               on:click={() => push("/transactions")}
@@ -168,12 +175,6 @@
               </span>
               Transactions
             </ListItem>
-            <ListItem value="/categories" on:click={() => push("/categories")}>
-              <span slot="prepend">
-                <Icon path={mdiFolder} />
-              </span>
-              Categories
-            </ListItem>
           </ListItemGroup>
         </List>
       </NavigationDrawer>
@@ -182,10 +183,6 @@
     <main>
       <Router {routes} />
     </main>
-
-    <aside />
-
-    <footer />
   </div>
   <Snackbar
     class="justify-space-between"
@@ -228,12 +225,11 @@
     display: grid;
 
     grid-template-areas:
-      "header header header"
-      "nav content side"
-      "footer footer footer";
+      "header header"
+      "nav content";
 
-    grid-template-columns: 200px 1fr 0;
-    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: auto 1fr;
 
     height: 100vh;
   }
@@ -252,36 +248,18 @@
     padding: 10px;
   }
 
-  aside {
-    grid-area: side;
-  }
-
-  footer {
-    grid-area: footer;
-  }
-
   @media (max-width: 768px) {
     .container {
       grid-template-areas:
         "header"
         "nav"
-        "content"
-        "side"
-        "footer";
+        "content";
 
       grid-template-columns: 1fr;
       grid-template-rows:
         auto /* Header */
         minmax(75px, auto) /* Nav */
-        1fr /* Content */
-        minmax(75px, auto) /* Sidebar */
-        auto; /* Footer */
-    }
-
-    nav,
-    aside {
-      margin: 0;
-      width: 100%;
+        1fr; /* Content */
     }
   }
 </style>
