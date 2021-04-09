@@ -1,45 +1,265 @@
 <script lang="ts">
-    import { AppBar, Button, Icon, Menu, ListItem, MaterialApp } from "svelte-materialify";
-    import { mdiMenu, mdiDotsVertical } from "@mdi/js";
-    import { darkTheme } from "./stores";
-    import Logo from "./RecordbookLogo.svg";
+  import {
+    AppBar,
+    Button,
+    Icon,
+    Menu,
+    ListItem,
+    MaterialApp,
+    List,
+    ListItemGroup,
+    NavigationDrawer,
+    Snackbar,
+  } from "svelte-materialify";
+  import {
+    mdiFolder,
+    mdiAccountMultiple,
+    mdiViewDashboard,
+    mdiBrightness7,
+    mdiBrightness4,
+    mdiReceipt,
+  } from "@mdi/js";
+  import {
+    darkTheme,
+    infoMessages,
+    showInfoMessage,
+    transactions,
+  } from "./stores";
+  import type { Transaction } from "./types";
+  import Logo from "./RecordbookLogo.svg";
+  import Upload from "./Upload.svelte";
+  import Router from "svelte-spa-router";
+  import Dashboard from "./Dashboard.svelte";
+  import Merchants from "./Merchants.svelte";
+  import Categories from "./Categories.svelte";
+  import Transactions from "./Transactions.svelte";
+  import { push, pop, replace, location } from "svelte-spa-router";
+  import Papa from "papaparse";
+
+  let uploadElm: HTMLInputElement;
+
+  const routes = {
+    "/": Dashboard,
+    "/merchants": Merchants,
+    "/categories": Categories,
+    "/transactions": Transactions,
+    "*": Dashboard,
+  };
+
+  const uploadFile = (file: File) => {
+    Papa.parse(file, {
+      complete: function (results) {
+        console.log(results);
+        // if (
+        //   results.data[0] !==
+        //   [
+        //     "Transaction Date",
+        //     "Posted Date",
+        //     "Card No.",
+        //     "Description",
+        //     "Category",
+        //     "Debit",
+        //     "Credit",
+        //   ]
+        // )
+        //   return;
+        let cleaned: Transaction[] = [];
+        for (let i = 1; i < results.data.length; i++) {
+          const row = results.data[i];
+
+          if (row.length != 7) continue;
+
+          cleaned.push({
+            date: new Date(row[0]),
+            postedDate: new Date(row[1]),
+            cardNumber: row[2],
+            merchant: row[3],
+            category: row[4],
+            amount: (row[5] ? +row[5] : 0) - (row[6] ? +row[6] : 0),
+          });
+        }
+
+        $transactions.push(...cleaned);
+        $transactions = $transactions;
+
+        showInfoMessage(`Loaded ${file.name}`);
+      },
+    });
+  };
+
+  let infoTimeout = 0;
+
+  const loadNextMessage = () => {
+    if ($infoMessages.length > 0 && infoTimeout === 0) {
+      infoTimeout = setTimeout(() => {
+        infoTimeout = 0;
+        $infoMessages.splice(0, 1);
+        $infoMessages = $infoMessages;
+      }, 3000) as any;
+    }
+  };
+
+  $: {
+    $infoMessages;
+    loadNextMessage();
+  }
 </script>
 
 <MaterialApp theme={$darkTheme ? "dark" : "light"}>
-    <AppBar>
-        <div slot="icon">
-            <Button fab depressed> 
-                <Icon path={mdiMenu} />
-            </Button>
-        </div>
-        <!-- <span slot="title"><img src="RecordbookLogo.svg" alt="" /></span> -->
-        <Logo class="test" />
+  <input
+    bind:this={uploadElm}
+    on:change={(evt) => {
+      for (const file of uploadElm.files) {
+        uploadFile(file);
+      }
+      uploadElm.value = null;
+    }}
+    multiple
+    type="file"
+    accept=".csv"
+    style="display:none"
+  />
+  <div class="container">
+    <header>
+      <AppBar flat dense>
+        <Logo class={$darkTheme ? "dark" : "light"} />
         <div style="flex-grow:1" />
-        <Button outlined>Item</Button>
-        <Menu right>
-            <div slot="activator">
-                <Button fab>
-                    <Icon path={mdiDotsVertical} />
-                </Button>
-            </div>
-            <ListItem>Item 1</ListItem>
-            <ListItem>Item 2</ListItem>
-            <ListItem>Item 3</ListItem>
-        </Menu>
-    </AppBar>
+        <div class="top-nav-bar">
+          <Button
+            text
+            class="button"
+            on:click={() => {
+              uploadElm.click();
+            }}>Upload</Button
+          >
+          <!-- <Button
+            icon
+            on:click={() => {
+              $darkTheme = !$darkTheme;
+            }}
+          >
+            <Icon path={$darkTheme ? mdiBrightness7 : mdiBrightness4} />
+          </Button> -->
+        </div>
+      </AppBar>
+    </header>
+
+    <nav>
+      <NavigationDrawer width="100%">
+        <List nav dense>
+          <ListItemGroup value={$location}>
+            <ListItem value="/" on:click={() => push("/")}>
+              <span slot="prepend">
+                <Icon path={mdiViewDashboard} />
+              </span>
+              Dashboard
+            </ListItem>
+            <ListItem value="/merchants" on:click={() => push("/merchants")}>
+              <span slot="prepend">
+                <Icon path={mdiAccountMultiple} />
+              </span>
+              Merchants
+            </ListItem>
+            <ListItem value="/categories" on:click={() => push("/categories")}>
+              <span slot="prepend">
+                <Icon path={mdiFolder} />
+              </span>
+              Categories
+            </ListItem>
+            <ListItem
+              value="/transactions"
+              on:click={() => push("/transactions")}
+            >
+              <span slot="prepend">
+                <Icon path={mdiReceipt} />
+              </span>
+              Transactions
+            </ListItem>
+          </ListItemGroup>
+        </List>
+      </NavigationDrawer>
+    </nav>
+
+    <main>
+      <Router {routes} />
+    </main>
+  </div>
+  <Snackbar
+    class="justify-space-between"
+    active={$infoMessages.length > 0}
+    center
+    bottom
+  >
+    {$infoMessages[0]}
     <Button
-        on:click={() => {
-            $darkTheme = !$darkTheme;
-        }}
+      text
+      on:click={() => {
+        clearTimeout(infoTimeout);
+        $infoMessages.splice(0, 1);
+        $infoMessages = $infoMessages;
+      }}
     >
-        testt
+      Dismiss
     </Button>
+  </Snackbar>
 </MaterialApp>
 
 <style>
-    :global(.test, path.a) {
-        /* color: red; */
-        /* border-color: blue; */
-        /* stroke: green; */
+  :global(svg.light .a) {
+    stroke: #000000de;
+  }
+
+  :global(svg.light) {
+    color: #000000de;
+  }
+
+  :global(svg.dark .a) {
+    stroke: #fff;
+  }
+
+  .top-nav-bar {
+    padding: 0 10px;
+  }
+
+  .container {
+    display: grid;
+
+    grid-template-areas:
+      "header header"
+      "nav content";
+
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: auto 1fr;
+
+    height: 100vh;
+  }
+
+  header {
+    grid-area: header;
+  }
+
+  nav {
+    grid-area: nav;
+  }
+
+  main {
+    grid-area: content;
+    overflow-y: auto;
+    padding: 10px;
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      grid-template-areas:
+        "header"
+        "nav"
+        "content";
+
+      grid-template-columns: 1fr;
+      grid-template-rows:
+        auto /* Header */
+        minmax(75px, auto) /* Nav */
+        1fr; /* Content */
     }
+  }
 </style>
