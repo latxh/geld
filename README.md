@@ -1,7 +1,6 @@
 # Recordbook - Transaction Report Application
-## User Interface Programming Final Project
 
-by Akeem Brisco, Brian Latchman, Nathan Escalona, Sneh Patel
+UI Programming Final Project by Akeem Brisco, Brian Latchman, Nathan Escalona, Sneh Patel
 
 ## Dev Environment Quick Start Guide
 
