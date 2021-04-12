@@ -1,13 +1,12 @@
 # Recordbook - Transaction Report Application
 ## User Interface Programming Final Project
 
-Akeem Brisco, Brian Latchman, Nathan Escalona, Sneh Patel
+by Akeem Brisco, Brian Latchman, Nathan Escalona, Sneh Patel
 
-keep dev tools open in dev mode
+## Dev Environment Quick Start Guide
 
-service workers bypass + cache disabled
-
+git clone https://github.com/latxh/recordbook.git
 
 npm install
 
-npm run dev (def 25565)
+npm run dev (hosted on --> localhost:25565)
